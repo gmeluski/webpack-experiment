@@ -1,6 +1,4 @@
-require("babel-register")();
-
-var Main = require('../main');
+var Main = require('./main');
 var server = new Main.default();
 
 
