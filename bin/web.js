@@ -1,4 +1,8 @@
-require("babel-register")();
+const config = require('../config');
+
+if (config.isProduction !== true) {
+  require("babel-register")();
+}
 
 var Main = require('../main');
 var server = new Main.default();

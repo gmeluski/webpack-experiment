@@ -1,5 +1,6 @@
 import express from 'express';
 import http from 'http';
+import site from './controllers/site';
 
 export default class Server {
   constructor() {
@@ -13,6 +14,8 @@ export default class Server {
     app.get('/', (req, res) => {
       res.send('hello world')
     })
+
+    app.get('/demo', site)
 
     return new Promise((fulfill, reject) => {
       server.listen(3000, (err) => {
