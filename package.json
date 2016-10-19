@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon bin/web",
-    "build": "webpack --target node --config config/webpack.server.js",
+    "build": "webpack --display-chunks --target node --config config/webpack.server.js",
     "production": "node dist/server.js"
   },
   "author": "",
@@ -14,6 +14,7 @@
   "dependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
+    "babel-plugin-system-import-transformer": "^2.4.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-register": "^6.16.3",
