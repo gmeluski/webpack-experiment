@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, Link } from 'react-router';
+import Vince from '../components/Vince';
 
 const Demo = React.createClass({
   render() {
@@ -19,8 +20,12 @@ const appRouter = () => {
     <Router>
       <Route
         path="/"
+        component={Demo}
+      />
+      <Route
+        path="vince"
         getComponent={(nextState, cb) => {
-          cb(null, Demo)
+          cb(null, Vince)
         }}
       />
     </Router>
