@@ -1,13 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, Link } from 'react-router';
-import Vince from '../components/Vince';
-
-const Demo = React.createClass({
-  render() {
-    return <h3>Real!</h3>;
-  }
-});
+import Demo from '../components/Demo';
 
 /*
 System.import('../components/Demo').then(function(module){
@@ -20,16 +14,17 @@ const appRouter = () => {
     <Router>
       <Route
         path="/"
-        component={Demo}
+        getComponent={(nextState, cb)=> {
+          cb(null, Demo);
+        }}
       />
       <Route
         path="vince"
         getComponent={(nextState, cb) => {
           System.import('../components/Vince')
-            .then((component) => {
-              cb(null, Vince)
-            })
-        }}
+            .then(loadRoute(cb))
+            .catch((errorLoading));
+          }}
       />
     </Router>
   )
