@@ -8,9 +8,11 @@ const Demo = React.createClass({
   }
 });
 
+/*
 System.import('../components/Demo').then(function(module){
     console.log(module);
 });
+*/
 
 const appRouter = () => {
   return (
