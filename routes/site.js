@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, Link } from 'react-router';
 import Demo from '../components/Demo';
+import Staples from '../components/Staples';
 
 /*
 System.import('../components/Demo').then(function(module){
@@ -26,6 +27,7 @@ const appRouter = () => {
             .catch((errorLoading));
           }}
       />
+      <Route path="staples" component={Staples} />
     </Router>
   )
 };
