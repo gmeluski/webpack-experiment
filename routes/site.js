@@ -8,12 +8,45 @@ const Demo = React.createClass({
   }
 });
 
+System.import('../components/Demo').then(function(module){
+    console.log(module);
+});
+
 const appRouter = () => {
   return (
     <Router>
-      <Route path="/demo" component={Demo} />
+      <Route
+        path="/demo"
+        getComponent={(nextState, cb) => {
+          cb(null, Demo)
+        }}
+      />
     </Router>
   )
 };
 
+function errorLoading(err) {
+ console.error('Dynamic page loading failed', err);
+}
+
+
+function loadRoute(cb) {
+ return (module) => cb(null, module.default);
+}
+
 export default appRouter;
+/*
+export default {
+  childRoutes: [
+    {
+      path: '/demo',
+      getComponent(location, cb) {
+        System
+          .import('../components/Demo')
+          .then(loadRoute(cb))
+          .catch(errorLoading);
+      }
+    },
+  ]
+};
+*/
