@@ -11,11 +11,7 @@ export default class Server {
     let app = express();
     let server = http.Server(app);
 
-    app.get('/', (req, res) => {
-      res.send('hello world')
-    })
-
-    app.get('/demo', site)
+    app.get('/', site)
 
     return new Promise((fulfill, reject) => {
       server.listen(3000, (err) => {

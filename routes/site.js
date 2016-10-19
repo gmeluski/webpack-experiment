@@ -16,7 +16,7 @@ const appRouter = () => {
   return (
     <Router>
       <Route
-        path="/demo"
+        path="/"
         getComponent={(nextState, cb) => {
           cb(null, Demo)
         }}
