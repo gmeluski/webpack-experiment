@@ -25,7 +25,10 @@ const appRouter = () => {
       <Route
         path="vince"
         getComponent={(nextState, cb) => {
-          cb(null, Vince)
+          System.import('../components/Vince')
+            .then((component) => {
+              cb(null, Vince)
+            })
         }}
       />
     </Router>

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon bin/web",
-    "build": "webpack --target node --config config/webpack.server.js"
+    "build": "webpack --target node --config config/webpack.server.js",
+    "production": "node dist/server.js"
   },
   "author": "",
   "license": "ISC",
