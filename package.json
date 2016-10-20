@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon bin/web",
-    "build": "webpack --display-chunks --target node --config config/webpack.server.js",
+    "bundle_client": "webpack --display-chunks --config config/webpack.client.js",
+    "build_server": "webpack --display-chunks --target node --config config/webpack.server.js",
     "production": "node dist/server.js"
   },
   "author": "",
