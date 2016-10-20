@@ -12,6 +12,7 @@ export default class Server {
     let app = express();
     let server = http.Server(app);
 
+    app.use(express.static('public'));
     app.use("/api", apiRoutes)
     app.get('*', site)
 
