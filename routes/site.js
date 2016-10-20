@@ -20,14 +20,14 @@ const appRouter = () => {
         }}
       />
       <Route
-        path="vince"
+        path="/vince"
         getComponent={(nextState, cb) => {
           System.import('../components/Vince')
             .then(loadRoute(cb))
             .catch((errorLoading));
           }}
       />
-      <Route path="staples" component={Staples} />
+      <Route path="/staples" component={Staples} />
     </Router>
   )
 };
