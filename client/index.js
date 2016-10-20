@@ -1,11 +1,14 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Router, browserHistory, createRoutes} from 'react-router';
+import {match, Router, browserHistory, createRoutes} from 'react-router';
 import appRouter from '../routes/site';
 
 const routes = createRoutes(appRouter());
 
-render(
-  <Router children={routes} history={browserHistory} />,
-  document.getElementById('root')
-)
+match({history: browserHistory, routes}, (error, redirectLocation, renderProps) => {
+  render(
+    <Router {...renderProps} />,
+    document.getElementById('root')
+  )
+});
+
